@@ -4,7 +4,7 @@ export default function handler(req, res) {
   const sitemap = `<?xml version="1.0"?><time>${time}</time>`;
 
   res.setHeader("Content-Type", "text/xml");
-  res.setHeader("Cache-Control", "maxage=60, stale-while-revalidate");
+  res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=180");
   res.write(sitemap);
   res.end();
 }
